@@ -1,0 +1,38 @@
+
+.newsContainer{
+    font-family: Verdana, Geneva, sans-serif;
+    padding:8px;
+    color:gray;
+}
+.upperContainer{
+    display: flex;
+}
+.newsTitle{
+    padding-left: 6px;
+    text-decoration: none;
+    color : black;
+    font-size: 16px;
+    font-weight: 500;
+}
+.number{
+    width: 34px;
+    font-size: larger;
+    font-weight: bold;
+}
+.username:hover{
+    text-decoration: underline;
+}
+.username{
+    text-decoration: none;
+    color:gray;
+
+}
+.lowerContainer{
+    margin-left: 37px;
+    font-weight: 445;
+}
+.sourceWebsite{
+    margin-left: 5px;
+    font-size: small;
+
+}

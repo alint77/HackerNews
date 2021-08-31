@@ -1,0 +1,53 @@
+.headerContainer{
+    display: flex;
+
+    height: 54px;
+    background-color: #ff6600;
+}
+.logoContainer{
+
+    margin: auto 10px;
+    font-size: larger;
+    font-weight: 600;
+    text-align: center;
+    line-height: 25px;
+    color:white;
+    width: 25px;
+    height:25px;
+    outline: 1px solid white;
+    top: 13px;
+    left: 2px;
+
+}
+
+.linksContainer{
+    margin: 5px 0;
+    display: inline-block;
+    width: 400px;
+
+
+}
+.linksContainer>.title>a{
+    font-size: larger;
+    font-weight: 800;
+    padding: 0 0 0 9px;
+    text-decoration: none;
+    color:black;
+    
+}
+
+.linksContainer>.links{
+    text-decoration: none;
+
+}
+
+.linksContainer>.links>.link,
+.linksContainer>.links>.link>a{
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+}
+.login{
+    margin: auto 10px auto auto;
+    
+}
