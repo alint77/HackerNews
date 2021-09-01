@@ -1,10 +1,6 @@
 import React from 'react'
 import styles from './Header.Module.css'
 import {
-    BrowserRouter as Router,
-    Switch,
-    NavLink,
-    Route,
     Link
 } from "react-router-dom"
 

@@ -1,4 +1,3 @@
-
 import React from 'react'
 
 import { Redirect, Route, Switch } from 'react-router-dom'
@@ -9,15 +8,7 @@ import TopStories from './TopStories'
 import NewStories from './NewStories'
 import styles from './App.Module.css'
 
-
-
 function App() {
-
-
-
-
-
-
 
   return (
     <React.Fragment>
@@ -26,9 +17,14 @@ function App() {
 
         <Switch>
 
-          <Route path='/top' component={TopStories}></Route>
+          <Route path='/top/:p' component={TopStories}/>
 
-          <Route path='/new' component={NewStories}></Route>
+          <Route exact path='/top' component={TopStories}/>
+
+          <Route exact path='/new' component={NewStories}/>
+
+          <Route path='/new/:p' component={NewStories}/>
+
           <Redirect from="/" exact to="/top"/>
 
         </Switch>
@@ -38,9 +34,6 @@ function App() {
       <Footer></Footer>
     </React.Fragment>
   );
-
-
-
 
 }
 
