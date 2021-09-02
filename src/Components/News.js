@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./News.Module.css";
 import timeDifference from "../UnixToRelativeTime";
 
+
 export default function News(props) {
   const [newsObj, setNewsObj] = useState({});
 
@@ -16,11 +17,8 @@ export default function News(props) {
             by:"Null",
             time:Date.now()/1000,
             kids:[]
-        }
-         
+        }   
     }
-
-
     setNewsObj(data);
   };
 

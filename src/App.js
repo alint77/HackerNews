@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Redirect, Route, Switch } from 'react-router-dom'
+import { Link, Redirect, Route, Switch, useLocation } from 'react-router-dom'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -21,9 +21,11 @@ function App() {
 
           <Route exact path='/top' component={TopStories}/>
 
-          <Route exact path='/new' component={NewStories}/>
 
           <Route path='/new/:p' component={NewStories}/>
+
+          <Route  path='/new' exact component={NewStories}/>
+
 
           <Redirect from="/" exact to="/top"/>
 
