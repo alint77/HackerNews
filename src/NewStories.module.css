@@ -1,10 +1,12 @@
 .more{
-    border-top: 1px solid rgb(205, 205, 205);
     height:50px;
-    color:gray;
     padding-left:60px;
     line-height: 50px;
     display: flex;
     font-size: larger;
 
+}
+.more>a{
+    text-decoration: none;
+    color:gray;
 }

@@ -6,39 +6,36 @@ import styles from './NewStories.module.css'
 export default function NewStories(props){
 
     const [newStories,setNewStories] = useState([])
-    const [p,setP] = useState(props.match.params.p ? parseInt(props.match.params.p) : 0)
+    
 
     
-    console.log(p);
+
+    let pStr=props.match.params.p
+    let p
+    pStr ? p=parseInt(pStr) : p=0 
     let start =p*30
-    let newsComps
-    const fetchData = async ()=>{
-        console.log('fetch');
-        const res=  await fetch("https://hacker-news.firebaseio.com/v0/newstories.json")
-        const data= await res.json()
+    const fetchData =  (newStoriesIdsArray)=>{
+
         let resStories=[]
-        data.slice(start,start+30).map((v,i)=>resStories[i]=`https://hacker-news.firebaseio.com/v0/item/${v}.json`)
-
-
-        newsComps= resStories.map((v,i)=><News url={v} key={i} number={i+1+start}></News>)
-        setNewStories(newsComps)
+        newStoriesIdsArray.slice(start,start+30).map((v,i)=>resStories[i]=`https://hacker-news.firebaseio.com/v0/item/${v}.json`)
+        setNewStories(resStories)
 
     }
 
     useEffect(()=>{
-        fetchData()
-        return ()=>{}
-    },[p])
+        fetch("https://hacker-news.firebaseio.com/v0/newstories.json")
+        .then(e=>e.json())
+        .then(e=>fetchData(e))
 
-    
-    const inc = ()=>{
-        setP(p+1)
-    }
+    },[props])
+
+    const newsComps= newStories.map((v,i)=><News url={v} key={v} number={i+1+start}></News>)
+
     return(
         <div>
-            {newStories}
+            {newsComps}
             <div className={styles.more}>
-                <a onClick={inc}>More</a>
+                <Link to={'/new/'+(p+1)}>More</Link>
             </div>
         </div>
     )
